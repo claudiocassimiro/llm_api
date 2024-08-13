@@ -1,5 +1,6 @@
 import requests
 from flask import current_app
+import json
 
 def get_models():
     try:
@@ -33,18 +34,35 @@ def generate_chat_completion(model, prompt, data, stream=False):
         raise Exception(f"Error generating chat completion: {str(e)}")
 
 def generate_completion(model, prompt, data):
+    if not model or not prompt:
+        raise ValueError("model and prompt are required parameters")
+
     try:
+        payload = {
+            "model": model,
+            "prompt": prompt,
+            "max_tokens": data.get('max_tokens', 16),
+            "temperature": max(min(data.get('temperature', 0.7), 1.0), 0.0),
+            "top_p": max(min(data.get('top_p', 1.0), 1.0), 0.0)
+        }
+
         response = requests.post(
             f"{current_app.config['OLLAMA_BASE_URL']}/api/generate",
-            json={
-                "model": model,
-                "prompt": prompt,
-                "max_tokens": data.get('max_tokens', 16),
-                "temperature": data.get('temperature', 0.7),
-                "top_p": data.get('top_p', 1.0)
-            }
+            json=payload
         )
+
         response.raise_for_status()
-        return response.json()['response']
+
+        # Processar a resposta linha por linha
+        responses = []
+        for line in response.text.strip().splitlines():
+            try:
+                json_response = json.loads(line)
+                responses.append(json_response['response'])  # Armazena a parte 'response'
+            except json.JSONDecodeError as e:
+                print(f"Error decoding JSON line: {line}. Error: {str(e)}")
+
+        return ''.join(responses)  # Retorna a concatenação das respostas
+
     except requests.exceptions.RequestException as e:
         raise Exception(f"Error generating completion: {str(e)}")
