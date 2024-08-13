@@ -192,7 +192,3 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 ## Contato
 
 Para mais informações, entre em contato com [Claudio Cassimiro](mailto:claudioletras2019@gmail.com).
-
-```
-
-```
