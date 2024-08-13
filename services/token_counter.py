@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer
 from models import User
-from app import db
+from utils.extensions import db
 
 MODEL_MAPPING = {
     "llama2": "meta-llama/Llama-2-7b-chat-hf",

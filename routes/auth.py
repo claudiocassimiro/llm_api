@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from models import User
-from app import db, bcrypt
+from utils.extensions import db, bcrypt 
 from utils.decorators import APIError
 import uuid
 

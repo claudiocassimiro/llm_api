@@ -1,12 +1,13 @@
+# app.py
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
 from config import Config
+from utils.extensions import db, bcrypt
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
+
+db.init_app(app)
+bcrypt.init_app(app)
 
 from routes import auth, llm, user
 
