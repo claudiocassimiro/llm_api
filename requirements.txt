@@ -9,6 +9,7 @@ Flask-Bcrypt==1.0.1
 Flask-SQLAlchemy==3.1.1
 fsspec==2024.6.1
 greenlet==3.0.3
+gunicorn==23.0.0
 huggingface-hub==0.24.5
 idna==3.7
 itsdangerous==2.2.0
@@ -16,6 +17,7 @@ Jinja2==3.1.4
 MarkupSafe==2.1.5
 numpy==2.0.1
 packaging==24.1
+psycopg2==2.9.9
 python-dotenv==1.0.1
 PyYAML==6.0.2
 regex==2024.7.24
