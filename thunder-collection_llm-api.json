@@ -1,0 +1,103 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "llm-api",
+    "collectionId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+    "dateExported": "2024-08-21T21:37:42.760Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d70df71b-c899-4b92-9424-6bab8477446e",
+            "colId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+            "containerId": "",
+            "name": "User Register",
+            "url": "https://api.llm.compute.capital/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-08-19T12:25:03.745Z",
+            "modified": "2024-08-21T21:35:14.067Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"username\": \"claudio\",\n    \"password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e6d1e6b4-8e86-44f5-a0a5-aa277fcb6277",
+            "colId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+            "containerId": "",
+            "name": "User Login",
+            "url": "https://api.llm.compute.capital/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-08-19T12:25:30.265Z",
+            "modified": "2024-08-21T21:34:39.187Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"username\": \"claudio\",\n    \"password\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8b0eaaa9-7bde-4993-8d79-2129d49e6ea3",
+            "colId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+            "containerId": "",
+            "name": "List Models",
+            "url": "https://api.llm.compute.capital/v1/models",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-08-19T12:26:18.983Z",
+            "modified": "2024-08-21T21:35:38.412Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "6e0fd4df-7091-4eeb-a54d-d9f05fc879a6"
+            }
+        },
+        {
+            "_id": "e3e124a2-0789-4191-9967-7065c5681e9f",
+            "colId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+            "containerId": "",
+            "name": "Chat Completions",
+            "url": "https://api.llm.compute.capital/v1/chat/completions",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-08-19T12:26:58.073Z",
+            "modified": "2024-08-21T21:36:47.733Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"model\": \"llama3.1:8b\",\n    \"messages\": [\n        {\n            \"role\": \"user\",\n            \"content\": \"O que você sabe sobre o GTA 6\"\n        }\n    ]\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "6e0fd4df-7091-4eeb-a54d-d9f05fc879a6"
+            }
+        },
+        {
+            "_id": "66f09bdf-831e-452d-aa65-efefa3354da7",
+            "colId": "7bdb2459-616a-4abd-a5e0-15827c2c8635",
+            "containerId": "",
+            "name": "Completions",
+            "url": "http://localhost:5000/v1/completions",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-08-19T12:27:35.890Z",
+            "modified": "2024-08-19T19:40:21.312Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"prompt\": \"Pode me trazer uma mensagem da biblia que fala sobre perceverança?\",\n    \"model\": \"llama3.1:8b\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "7948c9a2-16d3-4867-baae-e9fffdda8572"
+            }
+        }
+    ],
+    "ref": "PeUg0XiDtVNsm5aNvJWUKhlJCoA7uW7NWCY0tAIQj3KvY9dR9VGsB1GMAuJ6wrhlH0gpPmVsEPaCkhACN0gikQ"
+}
