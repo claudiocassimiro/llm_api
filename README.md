@@ -181,6 +181,17 @@ O modelo de dados é definido em `models.py` e inclui a tabela `User` com os seg
 - `api_key`: Chave API única para o usuário.
 - `tokens_used`: Número de tokens usados pelo usuário.
 
+## Renovação do SSL
+
+```Bash
+# Para gerar o certificado:
+sudo certbot certonly --webroot --webroot-path=/home/tensordock/projects/llm_saas_api/webroot --email computecapital@gmail.com --agree-tos --no-eff-email -d api.llm.compute.capital
+
+# Para copiar o certificado para a pasta do projeto
+sudo cp /etc/letsencrypt/live/api.llm.compute.capital/fullchain.pem /home/tensordock/projects/llm_saas_api/ssl/fullchain.pem
+sudo cp /etc/letsencrypt/live/api.llm.compute.capital/privkey.pem /home/tensordock/projects/llm_saas_api/ssl/privkey.pem
+```
+
 ## Contribuindo
 
 Se você deseja contribuir para este projeto, sinta-se à vontade para enviar um pull request ou abrir uma issue.
